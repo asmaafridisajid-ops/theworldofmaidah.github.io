@@ -3,26 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The True Value of Friendship | The World of Maidah</title>
 
 <style>
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         margin: 0;
         background: #f5f2ec;
         font-family: Georgia, "Times New Roman", serif;
         color: #292929;
-        text-align: center;
     }
 
     header {
         background: white;
-        padding: 20px;
-        border-bottom: 1px solid #ddd;
+        padding: 22px;
+        text-align: center;
+        border-bottom: 1px solid #e5e1d8;
     }
 
     header h1 {
         margin: 0;
-        font-size: 25px;
+        font-size: 26px;
         font-weight: normal;
     }
 
@@ -32,73 +37,47 @@
     }
 
     .reader {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 20px;
+        max-width: 1100px;
+        margin: 30px auto;
+        padding: 10px 20px;
     }
 
-    .book {
+    .book-frame {
         background: white;
+        padding: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        border-radius: 6px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 75vh;
         min-height: 600px;
-        padding: 50px;
-        box-shadow: 0 5px 25px rgba(0,0,0,0.12);
-        text-align: left;
-        border-radius: 4px;
-    }
-
-    .book h2 {
-        text-align: center;
-        font-size: 35px;
-        font-weight: normal;
-        margin-bottom: 30px;
-    }
-
-    .book p {
-        font-size: 18px;
-        line-height: 1.9;
-    }
-
-    .controls {
-        margin-top: 25px;
-    }
-
-    button {
-        padding: 12px 22px;
-        margin: 5px;
         border: none;
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 11px 22px;
         background: #292929;
         color: white;
-        cursor: pointer;
+        text-decoration: none;
         border-radius: 4px;
-        font-family: Georgia, serif;
     }
 
-    button:hover {
+    .back:hover {
         background: #555;
-    }
-
-    .page-number {
-        color: #777;
-        margin-top: 12px;
     }
 
     @media (max-width: 600px) {
         .reader {
-            padding: 10px;
-            margin: 20px auto;
+            padding: 5px;
         }
 
-        .book {
-            padding: 25px;
+        iframe {
+            height: 80vh;
             min-height: 500px;
-        }
-
-        .book h2 {
-            font-size: 28px;
-        }
-
-        .book p {
-            font-size: 16px;
         }
     }
 </style>
@@ -108,45 +87,18 @@
 
 <header>
     <h1>The World of Maidah</h1>
-    <p>The True Value of Friendship</p>
+    <p>The True Value of Friendship — Maidah Syed</p>
 </header>
 
 <div class="reader">
 
-    <div class="book">
-        <h2>The True Value of Friendship</h2>
-
-        <p>
-            This is where your book will appear.
-        </p>
-
-        <p>
-            A heartwarming children's story about kindness,
-            trust, sharing, and discovering what makes a friendship
-            truly special.
-        </p>
+    <div class="book-frame">
+        <iframe src="true-value-of-friendship.pdf"></iframe>
     </div>
 
-    <div class="controls">
-        <button onclick="previousPage()">← Previous</button>
-        <button onclick="nextPage()">Next →</button>
-    </div>
-
-    <div class="page-number">
-        Page 1
-    </div>
+    <a class="back" href="index.html">← Back to Books</a>
 
 </div>
-
-<script>
-    function previousPage() {
-        alert("Previous page");
-    }
-
-    function nextPage() {
-        alert("Next page");
-    }
-</script>
 
 </body>
 </html>
