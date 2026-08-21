@@ -4,56 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The True Value of Friendship</title>
+<title>The True Value of Friendship | The World of Maidah</title>
 
 <style>
-body {
-    margin: 0;
-    background: #f5f2ec;
-    font-family: Georgia, serif;
-    text-align: center;
-    color: #292929;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-header {
-    background: white;
-    padding: 25px;
-    border-bottom: 1px solid #ddd;
-}
+    body {
+        margin: 0;
+        background: #f5f2ec;
+        font-family: Georgia, "Times New Roman", serif;
+        color: #292929;
+        text-align: center;
+    }
 
-h1 {
-    font-weight: normal;
-    margin: 0;
-}
+    header {
+        background: white;
+        padding: 25px;
+        border-bottom: 1px solid #e5e1d8;
+    }
 
-p {
-    color: #777;
-}
+    header h1 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: normal;
+    }
 
-.reader {
-    width: 95%;
-    max-width: 1000px;
-    margin: 30px auto;
-}
+    header p {
+        color: #777;
+        margin-bottom: 0;
+    }
 
-iframe {
-    width: 100%;
-    height: 75vh;
-    min-height: 600px;
-    border: none;
-    background: white;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-}
+    .reader {
+        width: 95%;
+        max-width: 1000px;
+        margin: 35px auto;
+    }
 
-.back {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #292929;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-}
+    .pdf-box {
+        background: white;
+        padding: 10px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    iframe {
+        width: 100%;
+        height: 75vh;
+        min-height: 600px;
+        border: none;
+        display: block;
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: #292929;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .back:hover {
+        background: #555;
+    }
+
+    @media (max-width: 600px) {
+        iframe {
+            height: 75vh;
+            min-height: 500px;
+        }
+    }
 </style>
 </head>
 
@@ -66,7 +88,13 @@ iframe {
 
 <div class="reader">
 
-    <iframe src="true-value-of-friendship.pdf"></iframe>
+    <div class="pdf-box">
+
+        <iframe
+            src="True%20value%20of%20friendship.pdf">
+        </iframe>
+
+    </div>
 
     <a class="back" href="index.html">
         ← Back to The World of Maidah
