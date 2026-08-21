@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The True Value of Friendship | The World of Maidah</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #f5f2ec;
+        font-family: Georgia, "Times New Roman", serif;
+        color: #292929;
+        text-align: center;
+    }
+
+    header {
+        background: white;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 25px;
+        font-weight: normal;
+    }
+
+    header p {
+        margin: 6px 0 0;
+        color: #777;
+    }
+
+    .reader {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .book {
+        background: white;
+        min-height: 600px;
+        padding: 50px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        text-align: left;
+        border-radius: 4px;
+    }
+
+    .book h2 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+
+    .book p {
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .controls {
+        margin-top: 25px;
+    }
+
+    button {
+        padding: 12px 22px;
+        margin: 5px;
+        border: none;
+        background: #292929;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: Georgia, serif;
+    }
+
+    button:hover {
+        background: #555;
+    }
+
+    .page-number {
+        color: #777;
+        margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+        .reader {
+            padding: 10px;
+            margin: 20px auto;
+        }
+
+        .book {
+            padding: 25px;
+            min-height: 500px;
+        }
+
+        .book h2 {
+            font-size: 28px;
+        }
+
+        .book p {
+            font-size: 16px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>The World of Maidah</h1>
+    <p>The True Value of Friendship</p>
+</header>
+
+<div class="reader">
+
+    <div class="book">
+        <h2>The True Value of Friendship</h2>
+
+        <p>
+            This is where your book will appear.
+        </p>
+
+        <p>
+            A heartwarming children's story about kindness,
+            trust, sharing, and discovering what makes a friendship
+            truly special.
+        </p>
+    </div>
+
+    <div class="controls">
+        <button onclick="previousPage()">← Previous</button>
+        <button onclick="nextPage()">Next →</button>
+    </div>
+
+    <div class="page-number">
+        Page 1
+    </div>
+
+</div>
+
+<script>
+    function previousPage() {
+        alert("Previous page");
+    }
+
+    function nextPage() {
+        alert("Next page");
+    }
+</script>
+
+</body>
+</html>
