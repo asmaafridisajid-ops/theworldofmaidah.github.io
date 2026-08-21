@@ -4,201 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The World of Maidah</title>
+<title>The True Value of Friendship</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
+    background: #f3efe7;
     font-family: Georgia, "Times New Roman", serif;
-    background: #f8f6f1;
     color: #292929;
-    line-height: 1.6;
 }
-
-/* HEADER */
 
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e1d8;
-    padding: 22px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: white;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 1px solid #ddd;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: normal;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    margin-left: 25px;
-    font-size: 15px;
+header p {
+    margin: 7px 0 0;
+    color: #777;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* HERO */
-
-.hero {
-    max-width: 1000px;
-    margin: auto;
-    padding: 90px 25px 70px;
+.reader {
+    padding: 35px 15px;
     text-align: center;
 }
 
-.hero h1 {
-    font-size: 55px;
-    font-weight: normal;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    max-width: 650px;
+#book {
+    width: 900px;
+    height: 600px;
+    max-width: 95vw;
+    max-height: 70vh;
     margin: auto;
-    color: #666;
-    font-size: 18px;
 }
 
-.button {
-    display: inline-block;
+.page {
+    background: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controls {
     margin-top: 25px;
-    padding: 13px 28px;
+}
+
+button {
+    padding: 12px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
     background: #292929;
     color: white;
-    text-decoration: none;
-    border-radius: 4px;
+    font-family: Georgia, serif;
     cursor: pointer;
 }
 
-.button:hover {
-    background: #555;
+button:hover {
+    opacity: 0.8;
 }
 
-/* BOOK SECTION */
-
-.section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 50px 25px;
-}
-
-.section h2 {
-    text-align: center;
-    font-size: 34px;
-    font-weight: normal;
-    margin-bottom: 35px;
-}
-
-.book-card {
-    background: white;
-    border: 1px solid #e5e1d8;
-    max-width: 700px;
-    margin: auto;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-}
-
-/* BOOK COVER */
-
-.book-cover {
-    width: 180px;
-    height: 250px;
-    margin: 0 auto 25px;
-    background: #eeeae2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.book-cover span {
-    font-size: 21px;
-    line-height: 1.4;
-}
-
-.book-card h3 {
-    font-size: 28px;
-    margin-bottom: 8px;
-    font-weight: normal;
-}
-
-.author {
+.status {
+    margin-top: 15px;
     color: #777;
-    margin-bottom: 18px;
 }
 
-.genre {
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 18px;
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #292929;
+    text-decoration: none;
 }
-
-.description {
-    color: #666;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* ABOUT */
-
-.about-box {
-    background: white;
-    border: 1px solid #e5e1d8;
-    max-width: 700px;
-    margin: auto;
-    padding: 35px;
-    text-align: center;
-}
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid #e5e1d8;
-    color: #777;
-    margin-top: 60px;
-    font-size: 14px;
-}
-
-/* MOBILE */
 
 @media (max-width: 700px) {
-
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav a {
-        margin: 0 8px;
-    }
-
-    .hero {
-        padding-top: 65px;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .book-card {
-        padding: 25px;
+    #book {
+        height: 75vh;
+        max-height: 650px;
     }
 }
 </style>
@@ -207,105 +109,141 @@ footer {
 <body>
 
 <header>
-
-    <div class="logo">
-        The World of Maidah
-    </div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#books">Books</a>
-        <a href="#about">About</a>
-    </nav>
-
+    <h1>The True Value of Friendship</h1>
+    <p>By Maidah Syed</p>
 </header>
 
+<div class="reader">
 
-<!-- HOME -->
+    <div id="book"></div>
 
-<section class="hero" id="home">
+    <div class="controls">
+        <button onclick="previousPage()">← Previous</button>
+        <button onclick="nextPage()">Next →</button>
+    </div>
 
-    <h1>The World of Maidah</h1>
+    <div class="status" id="status">
+        Loading your book...
+    </div>
 
-    <p>
-        A place where stories come alive.
-        Discover original books and enjoy reading them online for free.
-    </p>
-
-    <a href="#books" class="button">
-        Explore Books
+    <a class="back" href="index.html">
+        ← Back to The World of Maidah
     </a>
 
-</section>
+</div>
 
+<script>
 
-<!-- BOOK -->
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-<section class="section" id="books">
+let flipBook = null;
 
-    <h2>Featured Book</h2>
+async function loadBook() {
 
-    <div class="book-card">
+    const status = document.getElementById("status");
 
-        <div class="book-cover">
-            <span>
-                The True Value<br>
-                of Friendship
-            </span>
-        </div>
+    try {
 
-        <h3>
-            The True Value of Friendship
-        </h3>
+        const pdf = await pdfjsLib.getDocument(
+            "True%20value%20of%20friendship.pdf"
+        ).promise;
 
-        <p class="author">
-            By Maidah Syed
-        </p>
+        const book = document.getElementById("book");
 
-        <p class="genre">
-            Children's Fiction
-        </p>
+        const pages = [];
 
-        <p class="description">
-            The True Value of Friendship is a heartwarming
-            children's story about kindness, trust, sharing,
-            and discovering what makes a friendship truly special.
-            💕📖
-        </p>
+        for (let number = 1; number <= pdf.numPages; number++) {
 
-        <a href="reader.html" class="button">
-            Read Book
-        </a>
+            status.innerText =
+                "Loading page " + number + " of " + pdf.numPages + "...";
 
-    </div>
+            const pdfPage = await pdf.getPage(number);
 
-</section>
+            const viewport = pdfPage.getViewport({
+                scale: 1.5
+            });
 
+            const page = document.createElement("div");
 
-<!-- ABOUT -->
+            page.className = "page";
 
-<section class="section" id="about">
+            const canvas = document.createElement("canvas");
 
-    <h2>About The World of Maidah</h2>
+            const context = canvas.getContext("2d");
 
-    <div class="about-box">
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
 
-        <p>
-            The World of Maidah is a free online reading space
-            created for readers who love discovering stories,
-            imagination, friendship and meaningful adventures.
-        </p>
+            await pdfPage.render({
+                canvasContext: context,
+                viewport: viewport
+            }).promise;
 
-    </div>
+            page.appendChild(canvas);
 
-</section>
+            pages.push(page);
+        }
 
+        flipBook = new St.PageFlip(book, {
 
-<footer>
+            width: 450,
+            height: 600,
 
-    © 2026 The World of Maidah · All Rights Reserved
+            size: "stretch",
 
-</footer>
+            minWidth: 280,
+            maxWidth: 600,
+
+            minHeight: 380,
+            maxHeight: 800,
+
+            showCover: true,
+
+            mobileScrollSupport: true,
+
+            flippingTime: 800,
+
+            drawShadow: true,
+
+            maxShadowOpacity: 0.4
+
+        });
+
+        flipBook.loadFromHTML(pages);
+
+        status.innerText =
+            "Your book is ready — turn the pages! 📖";
+
+    } catch (error) {
+
+        console.error(error);
+
+        status.innerText =
+            "The book could not be loaded. Please refresh the page.";
+
+    }
+}
+
+function nextPage() {
+
+    if (flipBook) {
+        flipBook.flipNext();
+    }
+
+}
+
+function previousPage() {
+
+    if (flipBook) {
+        flipBook.flipPrev();
+    }
+
+}
+
+loadBook();
+
+</script>
 
 </body>
 </html>
