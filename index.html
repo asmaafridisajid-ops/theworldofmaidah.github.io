@@ -7,8 +7,7 @@
 <title>The World of Maidah</title>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
 
 * {
     box-sizing: border-box;
@@ -27,7 +26,7 @@ body {
     overflow-x: hidden;
 }
 
-/* FLOATING DECORATIONS */
+/* Floating decorations */
 
 .decor {
     position: fixed;
@@ -85,15 +84,14 @@ body {
     }
 }
 
-
-/* HEADER */
+/* Header */
 
 header {
     position: sticky;
     top: 0;
     z-index: 100;
     padding: 16px 7%;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid #ead9df;
 
@@ -119,15 +117,13 @@ nav a {
     margin-left: 25px;
     font-size: 12px;
     letter-spacing: 1px;
-    transition: 0.3s;
 }
 
 nav a:hover {
     color: #b07b94;
 }
 
-
-/* HERO */
+/* Hero */
 
 .hero {
     min-height: 680px;
@@ -229,23 +225,9 @@ nav a:hover {
 
 .open-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(120,80,100,0.3);
 }
 
-
-/* BOOK DECORATION */
-
-.book-decoration {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 30px;
-    opacity: 0.8;
-}
-
-
-/* SECTION */
+/* Sections */
 
 .section {
     position: relative;
@@ -280,8 +262,7 @@ nav a:hover {
     font-size: 14px;
 }
 
-
-/* BOOKS */
+/* Books */
 
 .books {
     display: grid;
@@ -294,26 +275,23 @@ nav a:hover {
     background: #fffdfb;
 
     border: 1px solid #ead9df;
-    border-radius: 8px;
+    border-radius: 10px;
 
     padding: 42px 30px;
 
     text-align: center;
 
-    box-shadow:
-        0 15px 35px rgba(100,70,85,0.08),
-        inset 0 0 40px rgba(220,195,205,0.12);
+    box-shadow: 0 15px 35px rgba(100,70,85,0.08);
 
     transition: 0.4s;
 }
 
 .book-card:hover {
-    transform: translateY(-10px) rotate(-0.5deg);
+    transform: translateY(-10px);
     box-shadow: 0 25px 50px rgba(100,70,85,0.15);
 }
 
-
-/* RIBBON */
+/* Ribbons */
 
 .ribbon {
     position: absolute;
@@ -340,8 +318,7 @@ nav a:hover {
     border-right: 7px solid transparent;
 }
 
-
-/* FAKE COVER UNTIL REAL COVER IS ADDED */
+/* REAL BOOK COVERS */
 
 .book-cover {
     width: 185px;
@@ -349,56 +326,41 @@ nav a:hover {
 
     margin: 5px auto 30px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 4px;
+    overflow: hidden;
 
-    padding: 25px;
-
-    border-radius: 3px;
-
-    background:
-        linear-gradient(145deg, #e8d8e5, #f2d9e0);
+    background: #eee1e7;
 
     box-shadow:
-        8px 12px 25px rgba(70,45,60,0.2);
+        8px 12px 25px rgba(70,45,60,0.20);
+
+    transition: 0.45s;
 
     position: relative;
+}
 
-    transition: 0.4s;
+.book-cover img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.45s;
 }
 
 .book-card:hover .book-cover {
-    transform: rotate(-3deg) translateY(-5px);
+    transform: translateY(-7px) rotate(-2deg);
+    box-shadow:
+        12px 18px 30px rgba(70,45,60,0.25);
 }
 
-.book-cover::before {
-    content: "✦";
-    position: absolute;
-    top: 14px;
-    right: 15px;
-    color: white;
+.book-card:hover .book-cover img {
+    transform: scale(1.04);
 }
 
-.book-cover::after {
-    content: "❦";
-    position: absolute;
-    bottom: 13px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255,255,255,0.8);
-    font-size: 22px;
-}
-
-.book-cover span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 29px;
-    line-height: 1;
-    color: #684f5b;
-}
-
-
-/* BOOK TEXT */
+/* Book text */
 
 .book-card h3 {
     font-family: 'Cormorant Garamond', serif;
@@ -459,8 +421,7 @@ nav a:hover {
     color: white;
 }
 
-
-/* ABOUT */
+/* About */
 
 .about {
     max-width: none;
@@ -486,11 +447,9 @@ nav a:hover {
     font-size: 14px;
 }
 
-
-/* READING QUOTE */
+/* Quote */
 
 .quote {
-    position: relative;
     text-align: center;
     padding: 110px 25px;
 
@@ -515,8 +474,7 @@ nav a:hover {
     color: #66515c;
 }
 
-
-/* FOOTER */
+/* Footer */
 
 footer {
     background: #594750;
@@ -538,8 +496,7 @@ footer p {
     opacity: 0.7;
 }
 
-
-/* MOBILE */
+/* Mobile */
 
 @media (max-width: 750px) {
 
@@ -576,30 +533,18 @@ footer p {
     .quote p {
         font-size: 27px;
     }
-
-    .decor {
-        display: none;
-    }
 }
-
 </style>
 </head>
 
-
 <body>
-
-
-<!-- FLOATING STORYBOOK DECORATIONS -->
 
 <div class="decor star1">✦</div>
 <div class="decor star2">✧</div>
 <div class="decor star3">✦</div>
-
 <div class="decor flower1">❀</div>
 <div class="decor flower2">✿</div>
 
-
-<!-- HEADER -->
 
 <header>
 
@@ -615,8 +560,6 @@ The World of Maidah
 
 </header>
 
-
-<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -644,14 +587,8 @@ Open a Story ✦
 
 </div>
 
-<div class="book-decoration">
-📖 ✦
-</div>
-
 </section>
 
-
-<!-- BOOKS -->
 
 <section class="section" id="books">
 
@@ -671,7 +608,7 @@ Open a Story ✦
 <div class="books">
 
 
-<!-- BOOK 1 -->
+<!-- TRUE VALUE OF FRIENDSHIP -->
 
 <div class="book-card">
 
@@ -681,10 +618,10 @@ Featured
 
 <div class="book-cover">
 
-<span>
-The True Value<br>
-of Friendship
-</span>
+<img
+src="true-value-cover.jpg"
+alt="The True Value of Friendship book cover"
+>
 
 </div>
 
@@ -713,7 +650,7 @@ Read the Book →
 </div>
 
 
-<!-- BOOK 2 -->
+<!-- HELI'S COURAGE -->
 
 <div class="book-card">
 
@@ -723,10 +660,10 @@ New Story
 
 <div class="book-cover">
 
-<span>
-Heli's<br>
-Courage
-</span>
+<img
+src="heli-courage-cover.jpg"
+alt="Heli's Courage book cover"
+>
 
 </div>
 
@@ -759,8 +696,6 @@ Read the Book →
 </section>
 
 
-<!-- ABOUT -->
-
 <section class="section about" id="about">
 
 <div class="about-inner">
@@ -785,8 +720,6 @@ the page and discover something new.
 </section>
 
 
-<!-- QUOTE -->
-
 <section class="quote">
 
 <div class="mark">“</div>
@@ -800,8 +733,6 @@ on the next page.
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -818,7 +749,6 @@ The World of Maidah
 </p>
 
 </footer>
-
 
 </body>
 </html>
