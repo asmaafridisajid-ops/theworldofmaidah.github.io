@@ -753,3 +753,206 @@ The World of Maidah
 
 </body>
 </html>
+<!-- ✨ MAGICAL STORYBOOK DECORATIONS ✨ -->
+
+<style>
+.story-decor {
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    animation: storyFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 5px 8px rgba(100,70,90,0.12));
+}
+
+.story-book {
+    font-size: 34px;
+}
+
+.story-pencil {
+    font-size: 30px;
+    transform: rotate(-20deg);
+}
+
+.story-butterfly {
+    font-size: 28px;
+}
+
+.story-flower {
+    font-size: 26px;
+}
+
+.story-cloud {
+    font-size: 38px;
+    opacity: 0.65;
+}
+
+.story-star {
+    font-size: 24px;
+}
+
+.decor-one {
+    top: 17%;
+    left: 3%;
+}
+
+.decor-two {
+    top: 27%;
+    right: 4%;
+    animation-delay: 1s;
+}
+
+.decor-three {
+    top: 48%;
+    left: 2%;
+    animation-delay: 2s;
+}
+
+.decor-four {
+    top: 57%;
+    right: 3%;
+    animation-delay: 3s;
+}
+
+.decor-five {
+    top: 75%;
+    left: 4%;
+    animation-delay: 1.5s;
+}
+
+.decor-six {
+    top: 82%;
+    right: 4%;
+    animation-delay: 2.5s;
+}
+
+.decor-seven {
+    top: 12%;
+    right: 18%;
+    animation-delay: 3.5s;
+}
+
+.decor-eight {
+    top: 63%;
+    left: 13%;
+    animation-delay: 4s;
+}
+
+@keyframes storyFloat {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(6deg);
+    }
+}
+
+/* Extra little sparkles */
+
+.story-sparkle {
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    color: #c89fb5;
+    font-size: 18px;
+    animation: sparkle 3s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 22%;
+    left: 17%;
+}
+
+.sparkle-two {
+    top: 42%;
+    right: 16%;
+    animation-delay: 1s;
+}
+
+.sparkle-three {
+    top: 68%;
+    right: 18%;
+    animation-delay: 2s;
+}
+
+@keyframes sparkle {
+    0%,100% {
+        opacity: .3;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* Cute book shelf glow */
+
+.book-card {
+    overflow: visible;
+}
+
+.book-card::before {
+    content: "✦";
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    color: #d1a7bb;
+    font-size: 17px;
+    opacity: .7;
+    animation: sparkle 3s infinite;
+}
+
+/* Make ribbons stay above covers */
+
+.ribbon {
+    z-index: 10;
+}
+
+/* Little magical glow when hovering books */
+
+.book-card:hover::after {
+    content: "✦  ✧  ✦";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #c79daf;
+    font-size: 13px;
+    letter-spacing: 8px;
+    pointer-events: none;
+    animation: sparkle 1.5s infinite;
+}
+</style>
+
+
+<!-- 📚 Books -->
+<div class="story-decor story-book decor-one">📚</div>
+
+<!-- 🦋 Butterfly -->
+<div class="story-decor story-butterfly decor-two">🦋</div>
+
+<!-- ✏️ Pencil -->
+<div class="story-decor story-pencil decor-three">✏️</div>
+
+<!-- 🌸 Flower -->
+<div class="story-decor story-flower decor-four">🌸</div>
+
+<!-- 🧸 Doll / Teddy -->
+<div class="story-decor decor-five">🧸</div>
+
+<!-- ☁️ Cloud -->
+<div class="story-decor story-cloud decor-six">☁️</div>
+
+<!-- 📖 Little book -->
+<div class="story-decor story-book decor-seven">📖</div>
+
+<!-- 🌷 Flower -->
+<div class="story-decor story-flower decor-eight">🌷</div>
+
+<!-- ✨ Sparkles -->
+<div class="story-sparkle sparkle-one">✦</div>
+<div class="story-sparkle sparkle-two">✧</div>
+<div class="story-sparkle sparkle-three">✦</div>
