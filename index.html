@@ -956,3 +956,34 @@ The World of Maidah
 <div class="story-sparkle sparkle-one">✦</div>
 <div class="story-sparkle sparkle-two">✧</div>
 <div class="story-sparkle sparkle-three">✦</div>
+<div class="big-cat">🐱</div>
+
+<style>
+.big-cat {
+    position: fixed;
+    left: 2%;
+    bottom: 10%;
+    font-size: 85px;
+    z-index: 5;
+    pointer-events: none;
+    animation: bigCatFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 10px rgba(80,60,70,.15));
+}
+
+@keyframes bigCatFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+@media (max-width: 750px) {
+    .big-cat {
+        font-size: 55px;
+        left: 1%;
+        bottom: 8%;
+    }
+}
+</style>
