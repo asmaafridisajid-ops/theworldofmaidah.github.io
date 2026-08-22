@@ -1,59 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Bunty, Klicky & the Fairy of Kindness</title>
 
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    background: #f8f1eb;
-    font-family: Georgia, serif;
-    text-align: center;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 15% 20%, #f3e3eb, transparent 30%),
+        radial-gradient(circle at 85% 75%, #e9def0, transparent 30%),
+        #f8f1eb;
+
     color: #5d4852;
+
+    font-family: Georgia, serif;
+
+    text-align: center;
 }
 
-h1 {
-    padding: 25px 15px 5px;
+/* Header */
+
+header {
+    padding: 35px 20px 20px;
 }
 
-p {
-    color: #977287;
+header h1 {
+    margin: 0;
+
+    font-size: 38px;
+
+    font-weight: 500;
 }
+
+header p {
+    margin-top: 8px;
+
+    color: #9b7185;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+/* Decorative elements */
+
+.decoration {
+    position: fixed;
+
+    pointer-events: none;
+
+    font-size: 30px;
+
+    animation: float 5s ease-in-out infinite;
+}
+
+.one {
+    top: 18%;
+    left: 6%;
+}
+
+.two {
+    top: 30%;
+    right: 6%;
+
+    animation-delay: 1s;
+}
+
+.three {
+    bottom: 18%;
+    left: 7%;
+
+    animation-delay: 2s;
+}
+
+.four {
+    bottom: 12%;
+    right: 8%;
+
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+/* Book area */
 
 .book {
-    width: 90%;
-    max-width: 900px;
-    height: 75vh;
-    margin: 30px auto;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(80,60,70,0.15);
+    width: min(700px, 90%);
+
+    margin: 35px auto;
+
+    padding: 55px 30px;
+
+    background: rgba(255,255,255,0.75);
+
+    border: 1px solid #ead9df;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(90,60,80,0.14);
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+.book-icon {
+    font-size: 80px;
+
+    margin-bottom: 20px;
 }
+
+.book h2 {
+    font-size: 28px;
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.book p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #76666d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* Open book button */
+
+.open-book {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 32px;
+
+    background: #ad7d93;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+        0 10px 25px rgba(120,80,100,0.18);
+
+    transition: 0.3s;
+}
+
+.open-book:hover {
+    transform: translateY(-4px);
+
+    background: #956579;
+}
+
+/* Back button */
 
 .back {
     display: inline-block;
-    margin: 10px 0 30px;
-    padding: 12px 25px;
+
+    margin: 0 0 40px;
+
+    padding: 11px 25px;
+
     border: 1px solid #ad7d93;
+
     border-radius: 25px;
-    text-decoration: none;
+
     color: #9b6d83;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    transition: 0.3s;
 }
+
+.back:hover {
+    background: #ad7d93;
+
+    color: white;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .book {
+        width: 92%;
+
+        padding: 45px 20px;
+    }
+
+    .book-icon {
+        font-size: 65px;
+    }
+
+    .decoration {
+        font-size: 22px;
+    }
+
+}
+
 </style>
 
 </head>
 
+
 <body>
+
+
+<!-- Decorations -->
+
+<div class="decoration one">🦋</div>
+
+<div class="decoration two">✦</div>
+
+<div class="decoration three">🌸</div>
+
+<div class="decoration four">✧</div>
+
+
+<!-- Header -->
+
+<header>
 
 <h1>
 Bunty, Klicky & the Fairy of Kindness
@@ -63,17 +271,51 @@ Bunty, Klicky & the Fairy of Kindness
 A story by Maidah Syed
 </p>
 
+</header>
+
+
+<!-- Book -->
+
 <div class="book">
 
-<iframe
-src="./bunty-klicky-fairy-of-kindness.pdf">
-</iframe>
+<div class="book-icon">
+📖
+</div>
+
+<h2>
+Your Story Is Ready!
+</h2>
+
+<p>
+Step into the magical world of Bunty, Klicky
+and the Fairy of Kindness. Open the book below
+and enjoy the story.
+</p>
+
+
+<a
+href="bunty-klicky-fairy-of-kindness.pdf"
+target="_blank"
+class="open-book">
+
+Open the Book 📖
+
+</a>
 
 </div>
 
-<a href="index.html" class="back">
+
+<!-- Back -->
+
+<a
+href="index.html"
+class="back">
+
 ← Back to Library
+
 </a>
 
+
 </body>
+
 </html>
