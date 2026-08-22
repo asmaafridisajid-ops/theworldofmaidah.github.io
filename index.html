@@ -20,8 +20,6 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
-
 header {
     background: #ffffff;
     border-bottom: 1px solid #e5e1d8;
@@ -43,12 +41,6 @@ nav a {
     margin-left: 25px;
     font-size: 15px;
 }
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* HERO */
 
 .hero {
     max-width: 1000px;
@@ -78,14 +70,11 @@ nav a:hover {
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    cursor: pointer;
 }
 
 .button:hover {
     background: #555;
 }
-
-/* BOOK SECTION */
 
 .section {
     max-width: 1000px;
@@ -100,17 +89,19 @@ nav a:hover {
     margin-bottom: 35px;
 }
 
+.books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
 .book-card {
     background: white;
     border: 1px solid #e5e1d8;
-    max-width: 700px;
-    margin: auto;
-    padding: 40px;
+    padding: 35px 25px;
     text-align: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
-
-/* BOOK COVER */
 
 .book-cover {
     width: 180px;
@@ -130,31 +121,27 @@ nav a:hover {
 }
 
 .book-card h3 {
-    font-size: 28px;
+    font-size: 27px;
     margin-bottom: 8px;
     font-weight: normal;
 }
 
 .author {
     color: #777;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .genre {
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #888;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .description {
     color: #666;
-    max-width: 600px;
-    margin: auto;
 }
-
-/* ABOUT */
 
 .about-box {
     background: white;
@@ -165,40 +152,26 @@ nav a:hover {
     text-align: center;
 }
 
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 40px;
     border-top: 1px solid #e5e1d8;
     color: #777;
     margin-top: 60px;
-    font-size: 14px;
 }
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
+@media (max-width: 750px) {
     header {
         flex-direction: column;
         gap: 15px;
-    }
-
-    nav a {
-        margin: 0 8px;
-    }
-
-    .hero {
-        padding-top: 65px;
     }
 
     .hero h1 {
         font-size: 40px;
     }
 
-    .book-card {
-        padding: 25px;
+    .books {
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -208,102 +181,138 @@ footer {
 
 <header>
 
-    <div class="logo">
-        The World of Maidah
-    </div>
+<div class="logo">
+The World of Maidah
+</div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#books">Books</a>
-        <a href="#about">About</a>
-    </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#books">Books</a>
+<a href="#about">About</a>
+</nav>
 
 </header>
 
 
-<!-- HOME -->
-
 <section class="hero" id="home">
 
-    <h1>The World of Maidah</h1>
+<h1>The World of Maidah</h1>
 
-    <p>
-        A place where stories come alive.
-        Discover original books and enjoy reading them online for free.
-    </p>
+<p>
+A place where stories come alive.
+Discover original books and enjoy reading them online for free.
+</p>
 
-    <a href="#books" class="button">
-        Explore Books
-    </a>
+<a href="#books" class="button">
+Explore Books
+</a>
 
 </section>
 
-
-<!-- BOOK -->
 
 <section class="section" id="books">
 
-    <h2>Featured Book</h2>
+<h2>My Books</h2>
 
-    <div class="book-card">
+<div class="books">
 
-        <div class="book-cover">
-            <span>
-                The True Value<br>
-                of Friendship
-            </span>
-        </div>
 
-        <h3>
-            The True Value of Friendship
-        </h3>
+<!-- BOOK 1 -->
 
-        <p class="author">
-            By Maidah Syed
-        </p>
+<div class="book-card">
 
-        <p class="genre">
-            Children's Fiction
-        </p>
+<div class="book-cover">
+<span>
+The True Value<br>
+of Friendship
+</span>
+</div>
 
-        <p class="description">
-            The True Value of Friendship is a heartwarming
-            children's story about kindness, trust, sharing,
-            and discovering what makes a friendship truly special.
-            💕📖
-        </p>
+<h3>
+The True Value of Friendship
+</h3>
 
-        <a href="reader.html" class="button">
-            Read Book
-        </a>
+<p class="author">
+By Maidah Syed
+</p>
 
-    </div>
+<p class="genre">
+Children's Fiction
+</p>
+
+<p class="description">
+A heartwarming story about kindness, trust,
+sharing, and discovering what makes a friendship
+truly special.
+</p>
+
+<a href="reader.html" class="button">
+Read Book
+</a>
+
+</div>
+
+
+<!-- BOOK 2 -->
+
+<div class="book-card">
+
+<div class="book-cover">
+<span>
+Heli's<br>
+Courage
+</span>
+</div>
+
+<h3>
+Heli's Courage
+</h3>
+
+<p class="author">
+By Maidah Syed
+</p>
+
+<p class="genre">
+Children's Fiction
+</p>
+
+<p class="description">
+A story about courage, strength, and believing
+in yourself even when things feel difficult.
+</p>
+
+<a href="heli/" class="button">
+Read Book
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ABOUT -->
-
 <section class="section" id="about">
 
-    <h2>About The World of Maidah</h2>
+<h2>About The World of Maidah</h2>
 
-    <div class="about-box">
+<div class="about-box">
 
-        <p>
-            The World of Maidah is a free online reading space
-            created for readers who love discovering stories,
-            imagination, friendship and meaningful adventures.
-        </p>
+<p>
+The World of Maidah is a free online reading space
+created for readers who love discovering stories,
+imagination, friendship and meaningful adventures.
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
 <footer>
 
-    © 2026 The World of Maidah · All Rights Reserved
+© 2026 The World of Maidah · All Rights Reserved
 
 </footer>
 
