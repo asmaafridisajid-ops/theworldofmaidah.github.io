@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Heli's Courage | The World of Maidah</title>
+<title>Helis Courage | The World of Maidah</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
@@ -105,7 +105,7 @@ button {
 <body>
 
 <header>
-    <h1>Heli's Courage</h1>
+    <h1>Helis Courage</h1>
     <p>By Maidah Syed</p>
 </header>
 
@@ -142,7 +142,7 @@ async function loadBook() {
     try {
 
         const pdf = await pdfjsLib.getDocument(
-            "../Heli%E2%80%99s%20Courage.pdf"
+            "../Helis%20courage.pdf"
         ).promise;
 
         const book = document.getElementById("book");
@@ -185,6 +185,7 @@ async function loadBook() {
 
             width: 450,
             height: 600,
+
             size: "stretch",
 
             minWidth: 280,
@@ -194,11 +195,13 @@ async function loadBook() {
             maxHeight: 800,
 
             showCover: true,
+
             mobileScrollSupport: true,
 
             flippingTime: 800,
 
             drawShadow: true,
+
             maxShadowOpacity: 0.4
 
         });
