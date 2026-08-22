@@ -7,171 +7,385 @@
 <title>The World of Maidah</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #f8f6f1;
-    color: #292929;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    background: #fbf6f1;
+    color: #493d43;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e1d8;
-    padding: 22px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eadde3;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #9b7186;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #66565e;
     margin-left: 25px;
-    font-size: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
 }
 
+nav a:hover {
+    color: #b7849d;
+}
+
+/* HERO */
+
 .hero {
-    max-width: 1000px;
-    margin: auto;
-    padding: 90px 25px 70px;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 80px 25px;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, #eee5f2 0, transparent 25%),
+        radial-gradient(circle at 85% 75%, #f3dfe7 0, transparent 28%),
+        #fbf6f1;
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 90px;
+    left: 12%;
+    font-size: 35px;
+    color: #c9a8ba;
+}
+
+.hero::after {
+    content: "✧";
+    position: absolute;
+    bottom: 80px;
+    right: 13%;
+    font-size: 45px;
+    color: #bca8c8;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.small-title {
+    color: #aa7d91;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: 55px;
-    font-weight: normal;
-    margin-bottom: 15px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 9vw, 90px);
+    line-height: 0.95;
+    font-weight: 500;
+    color: #5b4650;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #a4778e;
 }
 
 .hero p {
-    max-width: 650px;
+    max-width: 620px;
     margin: auto;
-    color: #666;
-    font-size: 18px;
+    color: #75666d;
+    font-size: 16px;
 }
 
-.button {
+.main-button {
     display: inline-block;
-    margin-top: 25px;
-    padding: 13px 28px;
-    background: #292929;
+    margin-top: 32px;
+    padding: 14px 32px;
+    background: #ad7f94;
     color: white;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(150,105,130,0.2);
+    transition: 0.3s;
 }
 
-.button:hover {
-    background: #555;
+.main-button:hover {
+    transform: translateY(-3px);
+    background: #966a80;
 }
+
+/* SECTION */
 
 .section {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
-    padding: 50px 25px;
+    padding: 90px 25px;
 }
 
-.section h2 {
+.section-heading {
     text-align: center;
-    font-size: 34px;
-    font-weight: normal;
-    margin-bottom: 35px;
+    margin-bottom: 55px;
 }
+
+.section-heading .little {
+    color: #aa7d91;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 500;
+    color: #5b4650;
+    margin-top: 5px;
+}
+
+.section-heading p {
+    color: #807179;
+    margin-top: 8px;
+}
+
+/* BOOKS */
 
 .books {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 35px;
 }
 
 .book-card {
-    background: white;
-    border: 1px solid #e5e1d8;
-    padding: 35px 25px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid #eadde3;
+    border-radius: 18px;
+    padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 40px rgba(100,70,85,0.08);
+    transition: 0.35s;
 }
 
-.book-cover {
-    width: 180px;
-    height: 250px;
-    margin: 0 auto 25px;
-    background: #eeeae2;
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(100,70,85,0.13);
+}
+
+.book-icon {
+    width: 170px;
+    height: 235px;
+    margin: 0 auto 28px;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #eadbe6, #f4dfe5);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    padding: 25px;
+    box-shadow: 8px 10px 20px rgba(80,50,65,0.15);
+    position: relative;
 }
 
-.book-cover span {
-    font-size: 21px;
-    line-height: 1.4;
+.book-icon::after {
+    content: "✦";
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.book-icon span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    line-height: 1.1;
+    color: #684f5c;
 }
 
 .book-card h3 {
-    font-size: 27px;
-    margin-bottom: 8px;
-    font-weight: normal;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 31px;
+    font-weight: 600;
+    color: #5b4650;
+    margin-bottom: 4px;
 }
 
 .author {
-    color: #777;
+    color: #a4778e;
+    font-size: 13px;
     margin-bottom: 15px;
 }
 
 .genre {
-    font-size: 13px;
+    display: inline-block;
+    background: #f0e7f2;
+    color: #81688b;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 10px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #888;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .description {
-    color: #666;
+    color: #776970;
+    font-size: 14px;
+    max-width: 420px;
+    margin: auto;
 }
 
-.about-box {
-    background: white;
-    border: 1px solid #e5e1d8;
-    max-width: 700px;
+.read-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 11px 27px;
+    border: 1px solid #b7849d;
+    color: #9b7186;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.read-button:hover {
+    background: #b7849d;
+    color: white;
+}
+
+/* ABOUT */
+
+.about {
+    background: #f1e8f3;
+    max-width: none;
+}
+
+.about-inner {
+    max-width: 750px;
     margin: auto;
-    padding: 35px;
     text-align: center;
 }
+
+.about-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 50px;
+    font-weight: 500;
+    color: #5b4650;
+    margin-bottom: 20px;
+}
+
+.about-inner p {
+    color: #746771;
+    font-size: 15px;
+}
+
+/* QUOTE */
+
+.quote {
+    text-align: center;
+    padding: 100px 25px;
+    background: #fbf6f1;
+}
+
+.quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 70px;
+    color: #c59db2;
+    line-height: 0.5;
+}
+
+.quote p {
+    max-width: 650px;
+    margin: 25px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-style: italic;
+    color: #69545f;
+}
+
+/* FOOTER */
 
 footer {
+    background: #594750;
+    color: #f7eef3;
     text-align: center;
-    padding: 40px;
-    border-top: 1px solid #e5e1d8;
-    color: #777;
-    margin-top: 60px;
+    padding: 40px 20px;
 }
 
+footer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+footer p {
+    margin-top: 8px;
+    font-size: 12px;
+    opacity: 0.75;
+}
+
+/* MOBILE */
+
 @media (max-width: 750px) {
+
     header {
-        flex-direction: column;
-        gap: 15px;
+        padding: 15px 20px;
     }
 
-    .hero h1 {
-        font-size: 40px;
+    .logo {
+        font-size: 24px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 560px;
     }
 
     .books {
         grid-template-columns: 1fr;
+    }
+
+    .section-heading h2,
+    .about-inner h2 {
+        font-size: 42px;
+    }
+
+    .quote p {
+        font-size: 26px;
     }
 }
 </style>
@@ -196,32 +410,55 @@ The World of Maidah
 
 <section class="hero" id="home">
 
-<h1>The World of Maidah</h1>
+<div class="hero-content">
+
+<div class="small-title">
+Welcome to
+</div>
+
+<h1>
+The World<br>
+of <span>Maidah</span>
+</h1>
 
 <p>
-A place where stories come alive.
-Discover original books and enjoy reading them online for free.
+A little corner filled with stories, imagination,
+friendship and adventures. Come in and discover
+a story waiting for you.
 </p>
 
-<a href="#books" class="button">
-Explore Books
+<a href="#books" class="main-button">
+Explore My Books
 </a>
+
+</div>
 
 </section>
 
 
 <section class="section" id="books">
 
-<h2>My Books</h2>
+<div class="section-heading">
+
+<div class="little">
+✦ My Stories ✦
+</div>
+
+<h2>Books</h2>
+
+<p>Stories written with imagination and heart.</p>
+
+</div>
+
 
 <div class="books">
 
 
-<!-- BOOK 1 -->
+<!-- TRUE VALUE OF FRIENDSHIP -->
 
 <div class="book-card">
 
-<div class="book-cover">
+<div class="book-icon">
 <span>
 The True Value<br>
 of Friendship
@@ -236,9 +473,9 @@ The True Value of Friendship
 By Maidah Syed
 </p>
 
-<p class="genre">
+<div class="genre">
 Children's Fiction
-</p>
+</div>
 
 <p class="description">
 A heartwarming story about kindness, trust,
@@ -246,18 +483,18 @@ sharing, and discovering what makes a friendship
 truly special.
 </p>
 
-<a href="reader.html" class="button">
-Read Book
+<a href="reader.html" class="read-button">
+Read Book →
 </a>
 
 </div>
 
 
-<!-- BOOK 2 -->
+<!-- HELI'S COURAGE -->
 
 <div class="book-card">
 
-<div class="book-cover">
+<div class="book-icon">
 <span>
 Heli's<br>
 Courage
@@ -272,17 +509,17 @@ Heli's Courage
 By Maidah Syed
 </p>
 
-<p class="genre">
+<div class="genre">
 Children's Fiction
-</p>
+</div>
 
 <p class="description">
 A story about courage, strength, and believing
 in yourself even when things feel difficult.
 </p>
 
-<a href="heli/" class="button">
-Read Book
+<a href="heli/" class="read-button">
+Read Book →
 </a>
 
 </div>
@@ -293,16 +530,20 @@ Read Book
 </section>
 
 
-<section class="section" id="about">
+<section class="section about" id="about">
 
-<h2>About The World of Maidah</h2>
+<div class="about-inner">
 
-<div class="about-box">
+<div class="small-title">
+About the world
+</div>
+
+<h2>A Place for Stories</h2>
 
 <p>
-The World of Maidah is a free online reading space
-created for readers who love discovering stories,
-imagination, friendship and meaningful adventures.
+The World of Maidah is a little online library
+created to share stories and bring characters,
+friendships and adventures to life.
 </p>
 
 </div>
@@ -310,9 +551,30 @@ imagination, friendship and meaningful adventures.
 </section>
 
 
+<section class="quote">
+
+<div class="quote-mark">“</div>
+
+<p>
+Every story begins with a little imagination.
+</p>
+
+<div class="quote-mark">”</div>
+
+</section>
+
+
 <footer>
 
-© 2026 The World of Maidah · All Rights Reserved
+<h3>The World of Maidah</h3>
+
+<p>
+Stories • Imagination • Adventure
+</p>
+
+<p>
+© 2026 The World of Maidah
+</p>
 
 </footer>
 
