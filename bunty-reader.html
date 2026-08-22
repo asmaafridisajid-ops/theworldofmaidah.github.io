@@ -6,7 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bunty, Klicky & the Fairy of Kindness</title>
+<title>Bunty, Klicky & the Fairy of Kindness | The World of Maidah</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
 
 <style>
 
@@ -16,226 +20,88 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
-
-    background:
-        radial-gradient(circle at 15% 20%, #f3e3eb, transparent 30%),
-        radial-gradient(circle at 85% 75%, #e9def0, transparent 30%),
-        #f8f1eb;
-
-    color: #5d4852;
-
-    font-family: Georgia, serif;
-
-    text-align: center;
+    background: #f3efe7;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #292929;
 }
 
-/* Header */
-
 header {
-    padding: 35px 20px 20px;
+    background: white;
+    text-align: center;
+    padding: 25px;
+    border-bottom: 1px solid #ddd;
 }
 
 header h1 {
     margin: 0;
-
-    font-size: 38px;
-
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: normal;
 }
 
 header p {
-    margin-top: 8px;
-
-    color: #9b7185;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 13px;
+    margin: 7px 0 0;
+    color: #777;
 }
 
-/* Decorative elements */
-
-.decoration {
-    position: fixed;
-
-    pointer-events: none;
-
-    font-size: 30px;
-
-    animation: float 5s ease-in-out infinite;
+.reader {
+    padding: 35px 15px;
+    text-align: center;
 }
 
-.one {
-    top: 18%;
-    left: 6%;
+#book {
+    width: 900px;
+    height: 600px;
+    max-width: 95vw;
+    max-height: 70vh;
+    margin: auto;
 }
 
-.two {
-    top: 30%;
-    right: 6%;
-
-    animation-delay: 1s;
+.page {
+    background: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.three {
-    bottom: 18%;
-    left: 7%;
-
-    animation-delay: 2s;
+.page canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.four {
-    bottom: 12%;
-    right: 8%;
-
-    animation-delay: 3s;
+.controls {
+    margin-top: 25px;
 }
 
-@keyframes float {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-
-}
-
-/* Book area */
-
-.book {
-    width: min(700px, 90%);
-
-    margin: 35px auto;
-
-    padding: 55px 30px;
-
-    background: rgba(255,255,255,0.75);
-
-    border: 1px solid #ead9df;
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 20px 50px rgba(90,60,80,0.14);
-}
-
-.book-icon {
-    font-size: 80px;
-
-    margin-bottom: 20px;
-}
-
-.book h2 {
-    font-size: 28px;
-
-    font-weight: 500;
-
-    margin-bottom: 12px;
-}
-
-.book p {
-    max-width: 500px;
-
-    margin: 0 auto;
-
-    color: #76666d;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-/* Open book button */
-
-.open-book {
-    display: inline-block;
-
-    margin-top: 30px;
-
-    padding: 14px 32px;
-
-    background: #ad7d93;
-
+button {
+    padding: 12px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #292929;
     color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-
-    box-shadow:
-        0 10px 25px rgba(120,80,100,0.18);
-
-    transition: 0.3s;
+    font-family: Georgia, serif;
+    cursor: pointer;
 }
 
-.open-book:hover {
-    transform: translateY(-4px);
-
-    background: #956579;
+.status {
+    margin-top: 15px;
+    color: #777;
 }
-
-/* Back button */
 
 .back {
     display: inline-block;
-
-    margin: 0 0 40px;
-
-    padding: 11px 25px;
-
-    border: 1px solid #ad7d93;
-
-    border-radius: 25px;
-
-    color: #9b6d83;
-
+    margin-top: 20px;
+    color: #292929;
     text-decoration: none;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    transition: 0.3s;
 }
 
-.back:hover {
-    background: #ad7d93;
+@media (max-width: 700px) {
 
-    color: white;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    .book {
-        width: 92%;
-
-        padding: 45px 20px;
-    }
-
-    .book-icon {
-        font-size: 65px;
-    }
-
-    .decoration {
-        font-size: 22px;
+    #book {
+        height: 75vh;
+        max-height: 650px;
     }
 
 }
@@ -244,22 +110,7 @@ header p {
 
 </head>
 
-
 <body>
-
-
-<!-- Decorations -->
-
-<div class="decoration one">🦋</div>
-
-<div class="decoration two">✦</div>
-
-<div class="decoration three">🌸</div>
-
-<div class="decoration four">✧</div>
-
-
-<!-- Header -->
 
 <header>
 
@@ -268,54 +119,178 @@ Bunty, Klicky & the Fairy of Kindness
 </h1>
 
 <p>
-A story by Maidah Syed
+By Maidah Syed
 </p>
 
 </header>
 
 
-<!-- Book -->
+<div class="reader">
 
-<div class="book">
+<div id="book"></div>
 
-<div class="book-icon">
-📖
+<div class="controls">
+
+<button onclick="previousPage()">
+← Previous
+</button>
+
+<button onclick="nextPage()">
+Next →
+</button>
+
 </div>
 
-<h2>
-Your Story Is Ready!
-</h2>
+<div class="status" id="status">
+Loading your book...
+</div>
 
-<p>
-Step into the magical world of Bunty, Klicky
-and the Fairy of Kindness. Open the book below
-and enjoy the story.
-</p>
-
-
-<a
-href="bunty-klicky-fairy-of-kindness.pdf"
-target="_blank"
-class="open-book">
-
-Open the Book 📖
-
+<a class="back" href="index.html">
+← Back to The World of Maidah
 </a>
 
 </div>
 
 
-<!-- Back -->
+<script>
 
-<a
-href="index.html"
-class="back">
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-← Back to Library
+let flipBook = null;
 
-</a>
+async function loadBook() {
 
+    const status = document.getElementById("status");
+
+    try {
+
+        const pdf = await pdfjsLib.getDocument(
+            "bunty-klicky-fairy-of-kindness.pdf"
+        ).promise;
+
+        const book = document.getElementById("book");
+
+        const pages = [];
+
+        for (
+            let number = 1;
+            number <= pdf.numPages;
+            number++
+        ) {
+
+            status.innerText =
+                "Loading page " +
+                number +
+                " of " +
+                pdf.numPages +
+                "...";
+
+            const pdfPage =
+                await pdf.getPage(number);
+
+            const viewport =
+                pdfPage.getViewport({
+                    scale: 1.5
+                });
+
+            const page =
+                document.createElement("div");
+
+            page.className = "page";
+
+            const canvas =
+                document.createElement("canvas");
+
+            const context =
+                canvas.getContext("2d");
+
+            canvas.width =
+                viewport.width;
+
+            canvas.height =
+                viewport.height;
+
+            await pdfPage.render({
+
+                canvasContext: context,
+
+                viewport: viewport
+
+            }).promise;
+
+            page.appendChild(canvas);
+
+            pages.push(page);
+
+        }
+
+        flipBook =
+            new St.PageFlip(book, {
+
+                width: 450,
+
+                height: 600,
+
+                size: "stretch",
+
+                minWidth: 280,
+
+                maxWidth: 600,
+
+                minHeight: 380,
+
+                maxHeight: 800,
+
+                showCover: true,
+
+                mobileScrollSupport: true,
+
+                flippingTime: 800,
+
+                drawShadow: true,
+
+                maxShadowOpacity: 0.4
+
+            });
+
+        flipBook.loadFromHTML(pages);
+
+        status.innerText =
+            "Your book is ready — turn the pages! 📖";
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        status.innerText =
+            "The book could not be loaded. Please refresh the page.";
+
+    }
+
+}
+
+function nextPage() {
+
+    if (flipBook) {
+        flipBook.flipNext();
+    }
+
+}
+
+function previousPage() {
+
+    if (flipBook) {
+        flipBook.flipPrev();
+    }
+
+}
+
+loadBook();
+
+</script>
 
 </body>
-
 </html>
